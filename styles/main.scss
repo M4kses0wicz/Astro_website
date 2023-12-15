@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+$white: #cecece;
+$dark-blue: rgb(0, 3, 10);
+// $data-value-tab: 10 9 8 7 6 5 4 3 2 1;
+
+@mixin Flex-center($fd) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $fd;
+}
+
+@mixin mobile($w) {
+  @media (max-width: $w) {
+    @content;
+  }
+}
+
+body {
+  background: $dark-blue;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  #astronaut {
+    background: url(images/kosmonauta.png);
+    background-size: 250%;
+    background-position: center;
+    height: 75px;
+    width: 75px;
+    @include mobile(800px) {
+      width: 50px;
+      height: 50px;
+    }
+    @include mobile(400px) {
+      width: 35px;
+      height: 35px;
+    }
+    filter: drop-shadow(0px 0px 10px #0000007a);
+    position: relative;
+    z-index: 100;
+    pointer-events: none;
+  }
+  .cursor {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    // background: #fff;
+    // transform: translateY(200px);
+    pointer-events: none;
+    position: absolute;
+    z-index: 100;
+    border: 2px solid #fff;
+    padding: 5px;
+    mix-blend-mode: difference;
+  }
+  header {
+    @include Flex-center(row);
+    width: 100vw;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.025);
+    border-bottom: 2px rgba(255, 255, 255, 0.025) solid;
+    backdrop-filter: blur(5px);
+    position: Fixed;
+    z-index: 99;
+    top: 0;
+    nav {
+      @include Flex-center(row);
+      justify-content: space-between !important;
+      margin-top: 2px;
+      width: 85%;
+      .logo {
+        img {
+          width: 70px;
+          @include mobile(400px) {
+            width: 50px;
+          }
+        }
+      }
+      ol {
+        @include Flex-center(row);
+        color: $white;
+        list-style-type: none;
+        li,
+        a {
+          @include Flex-center(row);
+          margin-left: 2em;
+          font-size: 22px;
+          @include mobile(800px) {
+            font-size: 16px;
+            padding: 1px;
+            margin-left: 0.5em;
+          }
+          @include mobile(400px) {
+            font-size: 12px;
+            padding: 1px;
+            margin-left: 0.5em;
+          }
+          font-family: "Lato", sans-serif;
+          transition: 0.5s;
+          //   cursor: pointer;
+          text-decoration: none;
+          color: #86a3c9;
+          padding: 10px;
+          span {
+            margin-left: 2.5px;
+            display: block;
+            transition: 0.25s;
+            margin: 2px;
+          }
+          @for $i from 1 through 7 {
+            &:hover span:nth-of-type(#{$i}) {
+              color: #fff;
+              transition-delay: $i * 0.075s;
+              @if $i % 2 == 1 {
+                transform: translateY(-4px);
+              } @else {
+                transform: translateY(4px);
+              }
+            }
+          }
+        }
+        @for $i from 1 through 7 {
+          .s span:nth-of-type(#{$i}) {
+            transition: 0.25s;
+            transition-delay: $i * 0.075s;
+            @if $i % 2 == 1 {
+              transform: translateY(-30px) !important;
+              opacity: 0%;
+            } @else {
+              transform: translateY(30px) !important;
+              opacity: 0%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

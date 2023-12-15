@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+body {
+  background: rgb(0, 3, 10);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+body #astronaut {
+  background: url(images/kosmonauta.png);
+  background-size: 250%;
+  background-position: center;
+  height: 75px;
+  width: 75px;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4784313725));
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  body #astronaut {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 400px) {
+  body #astronaut {
+    width: 35px;
+    height: 35px;
+  }
+}
+body .cursor {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+  border: 2px solid #fff;
+  padding: 5px;
+  mix-blend-mode: difference;
+}
+body header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.025);
+  border-bottom: 2px rgba(255, 255, 255, 0.025) solid;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: Fixed;
+  z-index: 99;
+  top: 0;
+}
+body header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between !important;
+  margin-top: 2px;
+  width: 85%;
+}
+body header nav .logo img {
+  width: 70px;
+}
+@media (max-width: 400px) {
+  body header nav .logo img {
+    width: 50px;
+  }
+}
+body header nav ol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #cecece;
+  list-style-type: none;
+}
+body header nav ol li,
+body header nav ol a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 2em;
+  font-size: 22px;
+  font-family: "Lato", sans-serif;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #86a3c9;
+  padding: 10px;
+}
+@media (max-width: 800px) {
+  body header nav ol li,
+  body header nav ol a {
+    font-size: 16px;
+    padding: 1px;
+    margin-left: 0.5em;
+  }
+}
+@media (max-width: 400px) {
+  body header nav ol li,
+  body header nav ol a {
+    font-size: 12px;
+    padding: 1px;
+    margin-left: 0.5em;
+  }
+}
+body header nav ol li span,
+body header nav ol a span {
+  margin-left: 2.5px;
+  display: block;
+  transition: 0.25s;
+  margin: 2px;
+}
+body header nav ol li:hover span:nth-of-type(1),
+body header nav ol a:hover span:nth-of-type(1) {
+  color: #fff;
+  transition-delay: 0.075s;
+  transform: translateY(-4px);
+}
+body header nav ol li:hover span:nth-of-type(2),
+body header nav ol a:hover span:nth-of-type(2) {
+  color: #fff;
+  transition-delay: 0.15s;
+  transform: translateY(4px);
+}
+body header nav ol li:hover span:nth-of-type(3),
+body header nav ol a:hover span:nth-of-type(3) {
+  color: #fff;
+  transition-delay: 0.225s;
+  transform: translateY(-4px);
+}
+body header nav ol li:hover span:nth-of-type(4),
+body header nav ol a:hover span:nth-of-type(4) {
+  color: #fff;
+  transition-delay: 0.3s;
+  transform: translateY(4px);
+}
+body header nav ol li:hover span:nth-of-type(5),
+body header nav ol a:hover span:nth-of-type(5) {
+  color: #fff;
+  transition-delay: 0.375s;
+  transform: translateY(-4px);
+}
+body header nav ol li:hover span:nth-of-type(6),
+body header nav ol a:hover span:nth-of-type(6) {
+  color: #fff;
+  transition-delay: 0.45s;
+  transform: translateY(4px);
+}
+body header nav ol li:hover span:nth-of-type(7),
+body header nav ol a:hover span:nth-of-type(7) {
+  color: #fff;
+  transition-delay: 0.525s;
+  transform: translateY(-4px);
+}
+body header nav ol .s span:nth-of-type(1) {
+  transition: 0.25s;
+  transition-delay: 0.075s;
+  transform: translateY(-30px) !important;
+  opacity: 0%;
+}
+body header nav ol .s span:nth-of-type(2) {
+  transition: 0.25s;
+  transition-delay: 0.15s;
+  transform: translateY(30px) !important;
+  opacity: 0%;
+}
+body header nav ol .s span:nth-of-type(3) {
+  transition: 0.25s;
+  transition-delay: 0.225s;
+  transform: translateY(-30px) !important;
+  opacity: 0%;
+}
+body header nav ol .s span:nth-of-type(4) {
+  transition: 0.25s;
+  transition-delay: 0.3s;
+  transform: translateY(30px) !important;
+  opacity: 0%;
+}
+body header nav ol .s span:nth-of-type(5) {
+  transition: 0.25s;
+  transition-delay: 0.375s;
+  transform: translateY(-30px) !important;
+  opacity: 0%;
+}
+body header nav ol .s span:nth-of-type(6) {
+  transition: 0.25s;
+  transition-delay: 0.45s;
+  transform: translateY(30px) !important;
+  opacity: 0%;
+}
+body header nav ol .s span:nth-of-type(7) {
+  transition: 0.25s;
+  transition-delay: 0.525s;
+  transform: translateY(-30px) !important;
+  opacity: 0%;
+}/*# sourceMappingURL=rockets.css.map */
